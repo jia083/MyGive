@@ -1,0 +1,12 @@
+{
+  "network": "sepolia",
+  "chainId": 11155111,
+  "deployer": "0x8943f953EA8d9e619CB5eB1e48aeA613b90eB38a",
+  "deployedAt": "2025-12-08T10:06:24.544Z",
+  "contract": {
+    "name": "CrowdFunding",
+    "address": "0x204c66b8013C749d3982f1e311A318AD0Eb21d67",
+    "blockNumber": "N/A",
+    "transactionHash": "0xba8e1eaac729180db35666119632e2678da67e54115d2f624cd1ae8c1f1c589e"
+  }
+}

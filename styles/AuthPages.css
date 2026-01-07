@@ -1,0 +1,464 @@
+/* Authentication Pages - Login & Register */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Crimson+Pro:wght@400;500;600;700&display=swap');
+
+/* ============================================
+   AUTH PAGE LAYOUT
+   ============================================ */
+.auth-page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  background: var(--color-cream, #FBF8F3);
+}
+
+/* ============================================
+   LEFT SIDE PANEL - BRANDING
+   ============================================ */
+.auth-side-panel {
+  background: linear-gradient(135deg, #1A2332 0%, #2D3A4D 100%);
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-grain {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='3.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.auth-branding {
+  max-width: 500px;
+  z-index: 1;
+}
+
+.auth-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 3rem;
+}
+
+.auth-logo svg {
+  font-size: 2rem;
+  color: #E8705B;
+}
+
+.auth-panel-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  color: white;
+  line-height: 1.2;
+  margin: 0 0 1.5rem 0;
+}
+
+.auth-panel-accent {
+  color: #E8705B;
+}
+
+.auth-panel-description {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin: 0 0 3rem 0;
+}
+
+.auth-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.auth-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.auth-feature-item svg {
+  font-size: 1.25rem;
+  color: #E8705B;
+}
+
+/* ============================================
+   RIGHT SIDE PANEL - FORM
+   ============================================ */
+.auth-form-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  background: white;
+}
+
+.auth-form-container {
+  width: 100%;
+  max-width: 440px;
+}
+
+.auth-form-header {
+  margin-bottom: 2rem;
+}
+
+.auth-form-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1A2332;
+  margin: 0 0 0.5rem 0;
+}
+
+.auth-form-subtitle {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: #2D3A4D;
+  margin: 0;
+}
+
+/* ============================================
+   ERROR MESSAGE
+   ============================================ */
+.auth-error-message {
+  padding: 1rem;
+  background: rgba(239, 68, 68, 0.1);
+  border: 2px solid rgba(239, 68, 68, 0.3);
+  border-radius: 8px;
+  color: #DC2626;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.auth-success-message {
+  padding: 1rem;
+  background: rgba(16, 185, 129, 0.1);
+  border: 2px solid rgba(16, 185, 129, 0.3);
+  border-radius: 8px;
+  color: #059669;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+/* ============================================
+   FORM ELEMENTS
+   ============================================ */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1A2332;
+}
+
+.form-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.form-input-icon {
+  position: absolute;
+  left: 1rem;
+  color: #9CA3AF;
+  font-size: 1.125rem;
+  pointer-events: none;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.875rem 1rem 0.875rem 3rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: #1A2332;
+  background: white;
+  border: 2px solid #E5E7EB;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #E8705B;
+  box-shadow: 0 0 0 3px rgba(232, 112, 91, 0.1);
+}
+
+.form-input::placeholder {
+  color: #9CA3AF;
+}
+
+.form-input-toggle {
+  position: absolute;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: #9CA3AF;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.form-input-toggle:hover {
+  color: #E8705B;
+}
+
+/* Form Options */
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+.form-checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  color: #1A2332;
+}
+
+.form-checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: #E8705B;
+  cursor: pointer;
+}
+
+.form-link {
+  color: #E8705B;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.form-link:hover {
+  color: #D85A45;
+}
+
+/* Submit Button */
+.btn-submit {
+  width: 100%;
+  padding: 1rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+  background: #E8705B;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  box-shadow: 0 4px 16px rgba(232, 112, 91, 0.2);
+}
+
+.btn-submit:hover:not(:disabled) {
+  background: #D85A45;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(232, 112, 91, 0.3);
+}
+
+.btn-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ============================================
+   DIVIDER
+   ============================================ */
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0 1.5rem;
+  color: #6B7280;
+  font-size: 0.875rem;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #E5E7EB;
+}
+
+/* ============================================
+   SECONDARY BUTTON
+   ============================================ */
+.btn-secondary-auth {
+  width: 100%;
+  padding: 1rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1A2332;
+  background: white;
+  border: 2px solid #E5E7EB;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.btn-secondary-auth:hover {
+  border-color: #E8705B;
+  color: #E8705B;
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   FOOTER TEXT
+   ============================================ */
+.auth-footer-text {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #6B7280;
+  line-height: 1.5;
+}
+
+.auth-footer-link {
+  color: #E8705B;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.auth-footer-link:hover {
+  text-decoration: underline;
+}
+
+/* ============================================
+   FORM GRID (for Register page with multiple fields)
+   ============================================ */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.form-grid .form-group {
+  margin: 0;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1024px) {
+  .auth-page {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-side-panel {
+    display: none;
+  }
+
+  .auth-form-panel {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .auth-panel-title {
+    font-size: 2rem;
+  }
+
+  .auth-form-title {
+    font-size: 1.75rem;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-form-panel {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* ============================================
+   WALLET LOGIN STYLES
+   ============================================ */
+.wallet-login-section {
+  margin-bottom: 0;
+}
+
+.wallet-connect-container {
+  width: 100%;
+}
+
+.btn-wallet-login {
+  width: 100%;
+  padding: 1rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(135deg, #627EEA 0%, #4A5FC1 100%);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  box-shadow: 0 4px 16px rgba(98, 126, 234, 0.2);
+}
+
+.btn-wallet-login:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(98, 126, 234, 0.3);
+}
+
+.btn-wallet-login .wallet-icon {
+  font-size: 1.25rem;
+}
+
+.wallet-connected-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: rgba(16, 185, 129, 0.1);
+  border: 2px solid rgba(16, 185, 129, 0.3);
+  border-radius: 8px;
+  color: #059669;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+}

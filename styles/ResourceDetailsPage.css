@@ -1,0 +1,710 @@
+/* Resource Details Page - Humanitarian Modernism Design */
+
+.resource-details-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.resource-details-container {
+  flex: 1;
+  background: #FBF8F3;
+  padding: 2rem;
+  font-family: 'Crimson Pro', serif;
+}
+
+/* Header */
+.resource-details-header {
+  margin-bottom: 2rem;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: white;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.back-button:hover {
+  background: #F9FAFB;
+  border-color: #D1D5DB;
+  transform: translateX(-2px);
+}
+
+/* Main Content */
+.resource-details-content {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 2rem;
+  max-width: 1400px;
+}
+
+/* Left Column */
+.resource-details-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.resource-image-container {
+  position: relative;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(26, 35, 50, 0.08);
+}
+
+.resource-details-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.resource-details-emoji-container {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 100%);
+}
+
+.resource-details-emoji {
+  font-size: 8rem;
+  line-height: 1;
+}
+
+.resource-status-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.resource-status-badge.inactive {
+  background: #FEE2E2;
+  color: #DC2626;
+}
+
+/* Meta Card */
+.resource-meta-card {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 16px rgba(26, 35, 50, 0.08);
+}
+
+.resource-meta-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1A2332;
+  margin-bottom: 1.5rem;
+  font-family: 'Outfit', sans-serif;
+}
+
+.meta-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #F3F4F6;
+}
+
+.meta-item:last-child {
+  border-bottom: none;
+}
+
+.meta-icon {
+  font-size: 1.25rem;
+  color: #E8705B;
+  margin-top: 0.25rem;
+}
+
+.meta-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.meta-label {
+  font-size: 0.875rem;
+  color: #6B7280;
+  font-weight: 500;
+}
+
+.meta-value {
+  font-size: 1rem;
+  color: #1A2332;
+  font-weight: 600;
+}
+
+.donor-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.verified-badge-small {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  background: #DBEAFE;
+  color: #1E40AF;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.verified-badge-small svg {
+  font-size: 0.875rem;
+}
+
+.donor-address {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #F3F4F6;
+}
+
+.address-label {
+  display: block;
+  font-size: 0.75rem;
+  color: #6B7280;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.address-value {
+  display: block;
+  font-size: 0.75rem;
+  color: #374151;
+  background: #F9FAFB;
+  padding: 0.5rem;
+  border-radius: 6px;
+  word-break: break-all;
+  font-family: 'Courier New', monospace;
+}
+
+/* Blockchain Transparency Card */
+.blockchain-transparency-card {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 16px rgba(26, 35, 50, 0.08);
+  border: 2px solid #DBEAFE;
+}
+
+.transparency-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.transparency-icon {
+  font-size: 1.5rem;
+  color: #2563EB;
+}
+
+.transparency-header h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #1A2332;
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+}
+
+.transparency-description {
+  font-size: 0.875rem;
+  color: #6B7280;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.transparency-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.transparency-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.transparency-label {
+  font-size: 0.75rem;
+  color: #6B7280;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: 'Outfit', sans-serif;
+}
+
+.transparency-value {
+  font-size: 0.875rem;
+  color: #1A2332;
+  font-weight: 600;
+  font-family: 'Courier New', monospace;
+}
+
+.contract-address-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.transparency-value.contract-address {
+  flex: 1;
+  background: #F9FAFB;
+  padding: 0.625rem 0.875rem;
+  border-radius: 6px;
+  border: 1px solid #E5E7EB;
+}
+
+.copy-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: white;
+  border: 1px solid #E5E7EB;
+  border-radius: 6px;
+  color: #6B7280;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.copy-btn:hover {
+  background: #F9FAFB;
+  border-color: #2563EB;
+  color: #2563EB;
+}
+
+.copy-btn svg {
+  font-size: 0.875rem;
+}
+
+.network-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 0.875rem;
+  background: #FEF3C7;
+  color: #92400E;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: 'Outfit', sans-serif;
+  border: 1px solid #FCD34D;
+}
+
+.view-on-etherscan {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.875rem 1.5rem;
+  background: linear-gradient(135deg, #2563EB 0%, #1E40AF 100%);
+  color: white;
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  font-family: 'Outfit', sans-serif;
+  text-decoration: none;
+  transition: all 0.2s;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  box-sizing: border-box;
+}
+
+.view-on-etherscan:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+}
+
+.view-on-etherscan svg {
+  font-size: 0.875rem;
+}
+
+/* Right Column */
+.resource-details-right {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.resource-title-section {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 16px rgba(26, 35, 50, 0.08);
+}
+
+.resource-category-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #F5A391;
+  color: #D85A45;
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-family: 'Outfit', sans-serif;
+}
+
+.resource-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1A2332;
+  line-height: 1.2;
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+}
+
+.resource-description-section {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 16px rgba(26, 35, 50, 0.08);
+}
+
+.resource-description-section h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1A2332;
+  margin-bottom: 1rem;
+  font-family: 'Outfit', sans-serif;
+}
+
+.resource-description {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #374151;
+  margin: 0;
+}
+
+/* Blockchain Info Card */
+.blockchain-info-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: #DBEAFE;
+  border: 1px solid #93C5FD;
+  border-radius: 12px;
+}
+
+.blockchain-icon {
+  font-size: 1.5rem;
+  color: #1E40AF;
+  flex-shrink: 0;
+}
+
+.blockchain-info-card strong {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1E3A8A;
+  margin-bottom: 0.25rem;
+  font-family: 'Outfit', sans-serif;
+}
+
+.blockchain-info-card p {
+  font-size: 0.875rem;
+  color: #1E40AF;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Owner Notice */
+.owner-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: #FEF3C7;
+  border: 1px solid #FCD34D;
+  border-radius: 12px;
+}
+
+.owner-notice svg {
+  font-size: 1.5rem;
+  color: #D97706;
+  flex-shrink: 0;
+}
+
+.owner-notice strong {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #92400E;
+  margin-bottom: 0.25rem;
+  font-family: 'Outfit', sans-serif;
+}
+
+.owner-notice p {
+  font-size: 0.875rem;
+  color: #B45309;
+  margin: 0;
+}
+
+/* Unavailable Notice */
+.unavailable-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: #FEE2E2;
+  border: 1px solid #FCA5A5;
+  border-radius: 12px;
+}
+
+.unavailable-notice svg {
+  font-size: 1.5rem;
+  color: #DC2626;
+  flex-shrink: 0;
+}
+
+.unavailable-notice strong {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #991B1B;
+  margin-bottom: 0.25rem;
+  font-family: 'Outfit', sans-serif;
+}
+
+.unavailable-notice p {
+  font-size: 0.875rem;
+  color: #DC2626;
+  margin: 0;
+}
+
+/* Claim Section */
+.claim-section {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 16px rgba(26, 35, 50, 0.08);
+}
+
+.claim-section h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1A2332;
+  margin-bottom: 0.5rem;
+  font-family: 'Outfit', sans-serif;
+}
+
+.claim-description {
+  font-size: 0.875rem;
+  color: #6B7280;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.claim-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.claim-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.claim-input-group label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  font-family: 'Outfit', sans-serif;
+}
+
+.claim-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.claim-input {
+  flex: 1;
+  padding: 0.875rem 1rem;
+  padding-right: 4rem;
+  border: 2px solid #E5E7EB;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1A2332;
+  transition: all 0.2s;
+}
+
+.claim-input:focus {
+  outline: none;
+  border-color: #E8705B;
+  box-shadow: 0 0 0 3px rgba(232, 112, 91, 0.1);
+}
+
+.claim-input:disabled {
+  background: #F9FAFB;
+  cursor: not-allowed;
+}
+
+.input-unit {
+  position: absolute;
+  right: 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #6B7280;
+  pointer-events: none;
+}
+
+.input-helper {
+  font-size: 0.75rem;
+  color: #6B7280;
+}
+
+.btn-claim {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #E8705B 0%, #D85A45 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: 'Outfit', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 12px rgba(232, 112, 91, 0.3);
+}
+
+.btn-claim:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(232, 112, 91, 0.4);
+}
+
+.btn-claim:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Loading and Error States */
+.loading-state,
+.error-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  text-align: center;
+  background: white;
+  border-radius: 16px;
+  padding: 3rem;
+  box-shadow: 0 4px 16px rgba(26, 35, 50, 0.08);
+}
+
+.loading-spinner {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.error-icon {
+  font-size: 3rem;
+  color: #DC2626;
+  margin-bottom: 1rem;
+}
+
+.loading-state h3,
+.error-state h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1A2332;
+  font-family: 'Outfit', sans-serif;
+  margin-bottom: 1rem;
+}
+
+.btn-back {
+  padding: 0.75rem 1.5rem;
+  background: #E8705B;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: 'Outfit', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-back:hover {
+  background: #D85A45;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(232, 112, 91, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .resource-details-content {
+    grid-template-columns: 1fr;
+  }
+
+  .resource-details-left {
+    order: 2;
+  }
+
+  .resource-details-right {
+    order: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .resource-details-container {
+    padding: 1rem;
+  }
+
+  .resource-title {
+    font-size: 1.875rem;
+  }
+
+  .resource-details-image,
+  .resource-details-emoji-container {
+    height: 300px;
+  }
+
+  .resource-details-emoji {
+    font-size: 6rem;
+  }
+}

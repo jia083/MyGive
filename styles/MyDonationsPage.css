@@ -1,0 +1,321 @@
+/* My Donations Page - Uses same base styles as My Claims */
+
+.donations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.donation-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(26, 35, 50, 0.08);
+  transition: all 0.3s;
+}
+
+.donation-card:hover {
+  box-shadow: 0 8px 24px rgba(26, 35, 50, 0.12);
+}
+
+/* Donation Header */
+.donation-header {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  border-bottom: 1px solid #F3F4F6;
+}
+
+.donation-image-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.donation-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.donation-emoji-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 100%);
+}
+
+.donation-emoji {
+  font-size: 3rem;
+}
+
+.donation-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.donation-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1A2332;
+  font-family: 'Outfit', sans-serif;
+  margin: 0;
+}
+
+.donation-meta {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.875rem;
+  color: #6B7280;
+  margin-top: 0.5rem;
+}
+
+.donation-meta span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.donation-meta svg {
+  color: #E8705B;
+}
+
+/* Claims Section */
+.claims-section {
+  padding: 1.5rem;
+}
+
+.claims-heading {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #1A2332;
+  font-family: 'Outfit', sans-serif;
+  margin: 0 0 1rem 0;
+}
+
+.claims-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.claim-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: #F9FAFB;
+  border-radius: 12px;
+  transition: all 0.2s;
+}
+
+.claim-item:hover {
+  background: #F3F4F6;
+}
+
+.claim-item-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.claim-item-avatar {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #E8705B 0%, #D85A45 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.claim-item-details {
+  flex: 1;
+}
+
+.claim-item-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1A2332;
+  font-family: 'Outfit', sans-serif;
+  margin-bottom: 0.25rem;
+}
+
+.claim-item-meta {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #6B7280;
+}
+
+.claim-item-status {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: 'Outfit', sans-serif;
+  white-space: nowrap;
+}
+
+.status-badge.completed {
+  background: #D1FAE5;
+  color: #065F46;
+}
+
+.status-badge.pending {
+  background: #FEF3C7;
+  color: #92400E;
+}
+
+.status-badge.cancelled {
+  background: #FEE2E2;
+  color: #991B1B;
+}
+
+.status-badge svg {
+  font-size: 1rem;
+}
+
+.btn-chat-small {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: white;
+  color: #E8705B;
+  border: 2px solid #E8705B;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: 'Outfit', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.btn-chat-small:hover {
+  background: #E8705B;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn-chat-small svg {
+  font-size: 1rem;
+}
+
+.btn-complete-claim {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: 'Outfit', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.btn-complete-claim:hover:not(:disabled) {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.btn-complete-claim:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-complete-claim svg {
+  font-size: 1rem;
+}
+
+/* Cancel Claim Button */
+.btn-cancel-claim {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: white;
+  color: #DC2626;
+  border: 2px solid #DC2626;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: 'Outfit', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.btn-cancel-claim:hover:not(:disabled) {
+  background: #DC2626;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+}
+
+.btn-cancel-claim:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-cancel-claim svg {
+  font-size: 1rem;
+}
+
+.no-claims {
+  padding: 2rem;
+  text-align: center;
+  color: #9CA3AF;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .donation-header {
+    flex-direction: column;
+  }
+
+  .donation-image-container {
+    width: 100%;
+    height: 200px;
+  }
+
+  .claim-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .claim-item-status {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

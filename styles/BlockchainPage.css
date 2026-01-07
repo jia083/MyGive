@@ -1,0 +1,491 @@
+/* Blockchain Page - Humanitarian Modernism Design */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Crimson+Pro:wght@400;500;600;700&display=swap');
+
+:root {
+  --color-coral: #E8705B;
+  --color-coral-dark: #D85A45;
+  --color-coral-light: #F5A391;
+  --color-navy: #1A2332;
+  --color-navy-light: #2D3A4D;
+  --color-cream: #FBF8F3;
+  --color-cream-dark: #F0EBE3;
+  --shadow-sm: 0 2px 8px rgba(26, 35, 50, 0.04);
+  --shadow-md: 0 4px 16px rgba(26, 35, 50, 0.08);
+  --shadow-lg: 0 12px 32px rgba(26, 35, 50, 0.12);
+}
+
+.blockchain-layout-with-side-nav {
+  display: flex;
+  min-height: 100vh;
+}
+
+.blockchain-page-container {
+  flex: 1;
+  background: var(--color-cream);
+  padding: 2rem;
+  font-family: 'Crimson Pro', serif;
+}
+
+.blockchain-hero {
+  margin-bottom: 3rem;
+}
+
+.blockchain-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--color-coral-light);
+  color: var(--color-coral-dark);
+  padding: 0.5rem 1rem;
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.blockchain-hero-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--color-navy);
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+}
+
+.blockchain-hero-accent {
+  color: var(--color-coral);
+}
+
+.blockchain-hero-subtitle {
+  font-size: 1.125rem;
+  color: var(--color-navy-light);
+  max-width: 600px;
+  margin: 0 0 2rem 0;
+}
+
+.blockchain-info-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.info-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  gap: 1rem;
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.info-card-icon {
+  font-size: 2.5rem;
+  color: var(--color-coral);
+}
+
+.info-card-content h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+}
+
+.info-card-content p {
+  font-size: 0.875rem;
+  color: var(--color-navy-light);
+  margin: 0;
+}
+
+.blockchain-search-section {
+  margin-bottom: 3rem;
+}
+
+.blockchain-search-wrapper {
+  position: relative;
+  max-width: 800px;
+}
+
+.blockchain-search-wrapper svg {
+  position: absolute;
+  left: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-navy-light);
+}
+
+.blockchain-search-input {
+  width: 100%;
+  padding: 1rem 1.5rem 1rem 4rem;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  background: white;
+  border: 2px solid var(--color-cream-dark);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.blockchain-search-input:focus {
+  outline: none;
+  border-color: var(--color-coral);
+  box-shadow: 0 0 0 4px rgba(232, 112, 91, 0.1);
+}
+
+.blockchain-transactions {
+  margin-bottom: 3rem;
+}
+
+.transactions-header {
+  margin-bottom: 2rem;
+}
+
+.transactions-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin: 0 0 0.5rem 0;
+}
+
+.transactions-count {
+  color: var(--color-coral);
+}
+
+.transactions-subtitle {
+  font-size: 1rem;
+  color: var(--color-navy-light);
+  margin: 0;
+}
+
+.transactions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.transaction-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.transaction-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.transaction-card.pending {
+  border-left: 4px solid #F59E0B;
+}
+
+.transaction-card.confirmed {
+  border-left: 4px solid #10B981;
+}
+
+.transaction-status-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 1rem;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.transaction-card.confirmed .transaction-status-badge {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10B981;
+}
+
+.transaction-card.pending .transaction-status-badge {
+  background: rgba(245, 158, 11, 0.1);
+  color: #F59E0B;
+}
+
+.transaction-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.transaction-main-info {
+  display: flex;
+  gap: 1rem;
+  flex: 1;
+}
+
+.transaction-icon {
+  font-size: 2.5rem;
+  color: var(--color-coral);
+}
+
+.transaction-details {
+  flex: 1;
+}
+
+.transaction-campaign {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+}
+
+.transaction-hash-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--color-navy-light);
+}
+
+.transaction-hash-label {
+  font-weight: 600;
+}
+
+.transaction-hash {
+  font-family: 'Courier New', monospace;
+  color: var(--color-coral);
+}
+
+.copy-button {
+  background: var(--color-cream);
+  border: none;
+  padding: 0.375rem 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.copy-button:hover {
+  background: var(--color-cream-dark);
+}
+
+.copied-tooltip {
+  position: absolute;
+  top: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.375rem 0.75rem;
+  background: var(--color-navy);
+  color: white;
+  font-size: 0.75rem;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.transaction-amount {
+  text-align: right;
+}
+
+.amount-value {
+  display: block;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--color-coral);
+  margin-bottom: 0.25rem;
+}
+
+.amount-label {
+  font-size: 0.75rem;
+  color: var(--color-navy-light);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.transaction-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--color-cream);
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info-label {
+  font-size: 0.875rem;
+  color: var(--color-navy-light);
+  font-weight: 600;
+}
+
+.info-value {
+  font-family: 'Courier New', monospace;
+  font-size: 0.875rem;
+  color: var(--color-navy);
+}
+
+.info-value.address {
+  color: var(--color-coral);
+}
+
+.info-value-with-copy {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.copy-button-small {
+  background: none;
+  border: none;
+  padding: 0.25rem;
+  cursor: pointer;
+  color: var(--color-navy-light);
+  transition: color 0.3s ease;
+}
+
+.copy-button-small:hover {
+  color: var(--color-coral);
+}
+
+.transaction-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-view-explorer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1.5rem;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  color: var(--color-navy);
+  background: var(--color-cream);
+  border: 2px solid var(--color-cream-dark);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-view-explorer:hover {
+  background: white;
+  border-color: var(--color-coral);
+  color: var(--color-coral);
+  transform: translateY(-2px);
+}
+
+.blockchain-how-it-works {
+  padding: 3rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: var(--shadow-sm);
+}
+
+.blockchain-how-it-works .section-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  text-align: center;
+  margin: 0 0 3rem 0;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1rem;
+  align-items: center;
+}
+
+.step-card {
+  background: var(--color-cream);
+  padding: 2rem 1.5rem;
+  border-radius: 16px;
+  text-align: center;
+  position: relative;
+  grid-column: span 2;
+}
+
+.step-arrow {
+  font-size: 1.5rem;
+  color: var(--color-coral);
+  text-align: center;
+  grid-column: span 1;
+}
+
+.step-number {
+  position: absolute;
+  top: -0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2rem;
+  height: 2rem;
+  background: var(--color-coral);
+  color: white;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+}
+
+.step-icon {
+  font-size: 2.5rem;
+  color: var(--color-coral);
+  margin-bottom: 1rem;
+}
+
+.step-card h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+}
+
+.step-card p {
+  font-size: 0.875rem;
+  color: var(--color-navy-light);
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .blockchain-info-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .transaction-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .step-card {
+    grid-column: span 1;
+  }
+
+  .step-arrow {
+    grid-column: span 1;
+    transform: rotate(90deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .transaction-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .transaction-amount {
+    text-align: left;
+  }
+}
